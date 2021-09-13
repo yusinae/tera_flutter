@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  //const Home({Key? key, required this.title}) : super(key: key);
-  //const Home({required this.title});
-  //final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +12,7 @@ class Home extends StatelessWidget {
           margin: EdgeInsets.only(
             top: 4,
           ),
-          child: Text('test',
+          child: Text('export home',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
