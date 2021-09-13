@@ -1,44 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'routes.dart';
-import 'screenA.dart';
-import 'screenB.dart';
-import 'screenC.dart';
+import 'routes.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
   runApp(MyApp());
-  printInteger(2);
-}
-
-void printInteger(int aNumber) {
-  print('The number is $aNumber.'); // Print to console.
 }
 
 class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
   static const appTitle = 'Drawer Demo';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
-      //home: Home(title: appTitle),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Home(title: appTitle),
-        '/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(),
-        '/c': (context) => ScreenC(),
-      },
+      home: MyHomePage(title: appTitle),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({Key? key, required this.title}) : super(key: key);
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
   final String title;
 
   @override
@@ -51,7 +37,7 @@ class Home extends StatelessWidget {
           margin: EdgeInsets.only(
             top: 4,
           ),
-          child: Text(title,
+          child: Text('Home',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -122,12 +108,12 @@ class Home extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(Icons.home),
-                  title: Text('screenA', style: TextStyle(
+                  title: Text('screenAa', style: TextStyle(
                     fontSize: 15.0,
                   )),
                   onTap: (){
                     Navigator.pop(context);
-                    Navigator.pushNamed(context, '/a');
+                    //Navigator.pushNamed(context, '/a');
                   },
                   trailing: Icon(Icons.add),
                   contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -141,7 +127,7 @@ class Home extends StatelessWidget {
                   )),
                   onTap: (){
                     Navigator.pop(context);
-                    Navigator.pushNamed(context, '/b');
+                    //Navigator.pushNamed(context, '/b');
                   },
                   trailing: Icon(Icons.add),
                   contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -168,4 +154,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //import 'routes.dart';
+import 'home.dart';
 import 'screenA.dart';
 import 'screenB.dart';
 import 'screenC.dart';
-
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
   runApp(MyApp());
-  printInteger(2);
-}
-
-void printInteger(int aNumber) {
-  print('The number is $aNumber.'); // Print to console.
 }
 
 class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
   static const appTitle = 'Drawer Demo';
 
   @override
@@ -122,7 +117,7 @@ class Home extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(Icons.home),
-                  title: Text('screenA', style: TextStyle(
+                  title: Text('screenAa', style: TextStyle(
                     fontSize: 15.0,
                   )),
                   onTap: (){
@@ -141,7 +136,7 @@ class Home extends StatelessWidget {
                   )),
                   onTap: (){
                     Navigator.pop(context);
-                    Navigator.pushNamed(context, '/b');
+                    //Navigator.pushNamed(context, '/b');
                   },
                   trailing: Icon(Icons.add),
                   contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -168,4 +163,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

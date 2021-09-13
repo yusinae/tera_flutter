@@ -1,45 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-//import 'routes.dart';
-import 'screenA.dart';
-import 'screenB.dart';
-import 'screenC.dart';
-
-void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-  ));
-  runApp(MyApp());
-  printInteger(2);
-}
-
-void printInteger(int aNumber) {
-  print('The number is $aNumber.'); // Print to console.
-}
-
-class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
-  static const appTitle = 'Drawer Demo';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: appTitle,
-      //home: Home(title: appTitle),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Home(title: appTitle),
-        '/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(),
-        '/c': (context) => ScreenC(),
-      },
-    );
-  }
-}
 
 class Home extends StatelessWidget {
-  const Home({Key? key, required this.title}) : super(key: key);
-  final String title;
+  //const Home({Key? key, required this.title}) : super(key: key);
+  //const Home({required this.title});
+  //final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +15,7 @@ class Home extends StatelessWidget {
           margin: EdgeInsets.only(
             top: 4,
           ),
-          child: Text(title,
+          child: Text('test',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -168,4 +132,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

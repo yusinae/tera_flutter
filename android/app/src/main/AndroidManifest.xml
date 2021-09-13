@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tera_flutter">
    <application
-        android:label="tera_flutter"
+        android:label="flutter테스트"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
