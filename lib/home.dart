@@ -44,12 +44,42 @@ class Home extends StatelessWidget {
         ],
         iconTheme: IconThemeData(color: Colors.black87),
       ),
-      body: const Center(
-        child: Text('My Page!'),
+      body: Center(
+        child: ElevatedButton(
+            child: Text('custom popup'),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => popup(context),
+              );
+            }
+        ),
       ),
       drawer: Drawer(
         child: DrawerContents()
       )
     );
   }
+}
+
+Widget popup(BuildContext context) {
+  return new AlertDialog(
+    title: const Text('Popup example'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Hello"),
+      ],
+    ),
+    actions: <Widget>[
+      ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        style: ElevatedButton.styleFrom(primary: Colors.black, elevation: 0.0, textStyle: TextStyle(fontSize: 10)),
+        child: const Text('Close'),
+      ),
+    ],
+  );
 }
