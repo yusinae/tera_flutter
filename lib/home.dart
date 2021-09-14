@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'drawer_contents.dart';
+import 'popup.dart';
 
 class Home extends StatelessWidget {
 
@@ -60,26 +61,4 @@ class Home extends StatelessWidget {
       )
     );
   }
-}
-
-Widget popup(BuildContext context) {
-  return new AlertDialog(
-    title: const Text('Popup example'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("Hello"),
-      ],
-    ),
-    actions: <Widget>[
-      ElevatedButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        style: ElevatedButton.styleFrom(primary: Colors.black, elevation: 0.0, textStyle: TextStyle(fontSize: 10)),
-        child: const Text('Close'),
-      ),
-    ],
-  );
 }
