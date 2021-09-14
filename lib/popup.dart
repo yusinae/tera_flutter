@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 Widget popup(BuildContext context) {
   return Dialog(
     shape: RoundedRectangleBorder(
-        borderRadius:
-        BorderRadius.circular(15.0)), //this right here
+        borderRadius: BorderRadius.circular(15.0)), //this right here
     child: Stack(
       clipBehavior: Clip.none, // 동일 overflow: Overflow.visible,
       //alignment: Alignment.center,
       children: <Widget>[
         Container(
+          width: 360,
           height: 200,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,20 +26,37 @@ Widget popup(BuildContext context) {
                       border: InputBorder.none,
                       hintText: 'What do you want to remember?'),
                 ),
-                SizedBox(
-                  width: 320.0,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Color.fromRGBO(0, 0, 0, 0.8), elevation: 0.0, textStyle: TextStyle(fontSize: 12)),
-                    onPressed: () {},
-                    child: Text("Save2",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                )
               ],
             ),
           ),
         ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: SizedBox(
+            //width: MediaQuery.of(context).size.width * 1,
+            height: 45,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(0, 0, 0, 0.8),
+                  elevation: 0.0,
+                  textStyle: TextStyle(fontSize: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                        top: Radius.zero,
+                        bottom: Radius.circular(15.0),
+                    )
+                  ),
+              ),
+              onPressed: () {},
+              child: Text("Save",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+
         Positioned(
           top: -25,
           right: 7,
