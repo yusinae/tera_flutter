@@ -54,6 +54,7 @@ flutter:
   assets:
    - assets/images/sample_coffee.png
    - assets/images/qr.jpg
+   - assets/images/btn_close_wh.png
 
   fonts:
    - family: ArchitypeRenner

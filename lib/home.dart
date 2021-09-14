@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
             offset: Offset(5, 0),
             child: IconButton(
               icon: Icon(Icons.search),
-              color: Colors.black,
+              color: Color.fromRGBO(0, 0, 0, 1),
               onPressed: () {
                 print('search');
               },
