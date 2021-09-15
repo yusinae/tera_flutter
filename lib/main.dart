@@ -7,6 +7,7 @@ import 'screenA.dart';
 import 'screenB.dart';
 import 'screenC.dart';
 import 'popup_datepicker.dart';
+import 'error.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/a': (context) => ScreenA(),
+        //'/a': (context) => ScreenA(),
         '/b': (context) => ScreenB(),
         '/c': (context) => ScreenC(),
         '/datepicker': (context) => PopupDatepicker(),
@@ -43,11 +44,39 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('ko', 'KR'), // English, no country code
+        Locale('ko', 'KR'),
       ],
+
+      onGenerateRoute: (settings) {
+        if (settings.name == "/a") {
+          return PageRouteBuilder(
+              settings: settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
+              pageBuilder: (context, animation, secondaryAnimation) => ScreenA(),
+              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                //return FadeTransition(opacity: animation, child: child); //단순 페이드아웃
+
+                const begin = Offset(-2.0, 0.0);
+                const end = Offset.zero;
+                const curve = Curves.ease;
+                //final tween = Tween(begin: begin, end: end);
+                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                final offsetAnimation = animation.drive(tween);
+                return SlideTransition(
+                  position: offsetAnimation,
+                  child: child,
+                );
+
+              },
+          );
+        }
+        // Unknown route
+        return MaterialPageRoute(builder: (_) => Error());
+      },
     );
   }
 }
+
+
 
 /*
 class Home extends StatelessWidget {

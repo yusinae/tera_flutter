@@ -39,7 +39,7 @@ class DrawerContents extends StatelessWidget {
               ),
               ListTile(
                 leading: Icon(Icons.home),
-                title: Text('screenA', style: TextStyle(
+                title: Text('page animation', style: TextStyle(
                   fontSize: 15.0,
                 )),
                 onTap: (){
@@ -57,8 +57,7 @@ class DrawerContents extends StatelessWidget {
                   fontSize: 15.0,
                 )),
                 onTap: (){
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, '/b');
+                  Navigator.popAndPushNamed(context, '/b');
                 },
                 trailing: Icon(Icons.add),
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
