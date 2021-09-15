@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 //import 'routes.dart';
 import 'home.dart';
 import 'screenA.dart';
@@ -36,6 +37,14 @@ class MyApp extends StatelessWidget {
         '/c': (context) => ScreenC(),
         '/datepicker': (context) => PopupDatepicker(),
       },
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ko', 'KR'), // English, no country code
+      ],
     );
   }
 }
