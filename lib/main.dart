@@ -5,6 +5,7 @@ import 'home.dart';
 import 'screenA.dart';
 import 'screenB.dart';
 import 'screenC.dart';
+import 'popup_datepicker.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/a': (context) => ScreenA(),
         '/b': (context) => ScreenB(),
         '/c': (context) => ScreenC(),
+        '/datepicker': (context) => PopupDatepicker(),
       },
     );
   }

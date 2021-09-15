@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'drawer_contents.dart';
-import 'popup.dart';
+import 'package:tera_flutter/popup.dart';
 
 class Home extends StatelessWidget {
 
@@ -46,15 +46,26 @@ class Home extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black87),
       ),
       body: Center(
-        child: ElevatedButton(
-            child: Text('custom popup'),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) => popup(context),
-              );
-            }
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                child: Text('custom popup'),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => popup(context),
+                  );
+                }
+            ),
+            ElevatedButton(
+                child: Text('date picker'),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/datepicker');
+                }
+            ),
+          ],
+        )
       ),
       drawer: Drawer(
         child: DrawerContents()
