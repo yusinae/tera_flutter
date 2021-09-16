@@ -8,6 +8,7 @@ import 'screenB.dart';
 import 'screenC.dart';
 import 'popup_datepicker.dart';
 import 'error.dart';
+import 'todolist.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map map2 = {'zero': 0, 'I': 'one', 10: 'X'};
+    print(map2);
+
     return MaterialApp(
       //title: appTitle,
       //home: Home(title: appTitle),
@@ -37,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/b': (context) => ScreenB(),
         '/c': (context) => ScreenC(),
         '/datepicker': (context) => PopupDatepicker(),
+        '/todolist': (context) => TodoList(),
       },
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
@@ -50,32 +55,31 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         if (settings.name == "/a") {
           return PageRouteBuilder(
-              settings: settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
-              pageBuilder: (context, animation, secondaryAnimation) => ScreenA(),
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                //return FadeTransition(opacity: animation, child: child); //단순 페이드아웃
+            settings: settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
+            pageBuilder: (context, animation, secondaryAnimation) => ScreenA(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              //return FadeTransition(opacity: animation, child: child); //단순 페이드아웃
 
-                const begin = Offset(-2.0, 0.0);
-                const end = Offset.zero;
-                const curve = Curves.ease;
-                //final tween = Tween(begin: begin, end: end);
-                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-                final offsetAnimation = animation.drive(tween);
-                return SlideTransition(
-                  position: offsetAnimation,
-                  child: child,
-                );
+              const begin = Offset(-1.0, 0.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+              //final tween = Tween(begin: begin, end: end);
+              var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              //final offsetAnimation = animation.drive(tween);
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
 
-              },
+            },
           );
         }
         // Unknown route
-        return MaterialPageRoute(builder: (_) => Error());
+        return MaterialPageRoute(builder: (context) => Error()); // 잘못된 url
       },
     );
   }
 }
-
 
 
 /*

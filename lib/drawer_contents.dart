@@ -77,6 +77,19 @@ class DrawerContents extends StatelessWidget {
                 10.0),
                 dense:true,
               ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('TODOLIST', style: TextStyle(
+                  fontSize: 15.0,
+                )),
+                onTap: (){
+                  Navigator.pushNamed(context, '/todolist');
+                },
+                trailing: Icon(Icons.add),
+                contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
+                10.0),
+                dense:true,
+              ),
             ]
         );
   }
