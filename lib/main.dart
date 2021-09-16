@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         //'/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(),
+        '/b': (context) => ScreenB(title: 'Pass Value'),
         '/c': (context) => ScreenC(),
         '/datepicker': (context) => PopupDatepicker(),
         '/todolist': (context) => TodoList(),

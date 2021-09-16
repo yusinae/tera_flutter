@@ -22,7 +22,7 @@ class DrawerContents extends StatelessWidget {
                 //   //fit: BoxFit.fill,
                 // ),
                 //currentAccountPicture: new Image.asset('assets/images/qr.jpg', width: 18.0, height: 18.0),
-                accountName: Text('sinaed'),
+                accountName: Text('sinae'),
                 accountEmail: Text('sinae@test.co.kr'),
                 onDetailsPressed:(){
                   print('arrow is clicked');

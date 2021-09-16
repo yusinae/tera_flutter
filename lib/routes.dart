@@ -15,7 +15,7 @@ class Routes extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(),
+        //'/b': (context) => ScreenB(),
         '/c': (context) => ScreenC(),
       },
     );

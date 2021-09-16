@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screenA.dart';
-import 'screenC.dart';
 
 class ScreenB extends StatelessWidget {
+  const ScreenB({Key? key, required this.title}) : super(key: key);
+  final String title; //
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,7 +13,7 @@ class ScreenB extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0.0,
-          title: Text('ScreenB',
+          title: Text(title,
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,

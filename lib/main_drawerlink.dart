@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(title: appTitle),
         '/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(),
+        //'/b': (context) => ScreenB(),
         '/c': (context) => ScreenC(),
       },
     );
