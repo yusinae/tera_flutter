@@ -9,6 +9,7 @@ import 'screenC.dart';
 import 'popup_datepicker.dart';
 import 'error.dart';
 import 'todolist.dart';
+import 'package:get/get.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -31,18 +32,16 @@ class MyApp extends StatelessWidget {
     Map map2 = {'zero': 0, 'I': 'one', 10: 'X'};
     print(map2);
 
-    return MaterialApp(
+    return GetMaterialApp(
       //title: appTitle,
-      //home: Home(title: appTitle),
+      home: Home(),
       initialRoute: '/',
-      routes: {
-        '/': (context) => Home(),
-        //'/a': (context) => ScreenA(),
-        '/b': (context) => ScreenB(title: 'Pass Value'),
-        '/c': (context) => ScreenC(),
-        '/datepicker': (context) => PopupDatepicker(),
-        '/todolist': (context) => TodoList(),
-      },
+      getPages: [
+        GetPage(name: '/b', page: () => ScreenB(title: 'Pass Value')),
+        GetPage(name: '/c', page: () => ScreenC()),
+        GetPage(name: '/datepicker', page: () => PopupDatepicker()),
+        GetPage(name: '/todolist', page: () => TodoList()),
+      ],
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

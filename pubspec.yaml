@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
+  get: ^3.26.0 #required >> flutter run --no-sound-null-safety
   fluttertoast: ^8.0.8
   flutter_localizations:
     sdk: flutter

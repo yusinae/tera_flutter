@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DrawerContents extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ class DrawerContents extends StatelessWidget {
                 )),
                 onTap: (){
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/a');
+                  Get.toNamed('/a');
                 },
                 trailing: Icon(Icons.add),
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -53,11 +54,11 @@ class DrawerContents extends StatelessWidget {
               ),
               ListTile(
                 leading: Icon(Icons.home),
-                title: Text('screenB', style: TextStyle(
+                title: Text('GetX Test', style: TextStyle(
                   fontSize: 15.0,
                 )),
                 onTap: (){
-                  Navigator.popAndPushNamed(context, '/b');
+                  Get.toNamed('/b');
                 },
                 trailing: Icon(Icons.add),
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -70,7 +71,7 @@ class DrawerContents extends StatelessWidget {
                   fontSize: 15.0,
                 )),
                 onTap: (){
-                  Navigator.pushNamed(context, '/c');
+                  Get.toNamed('/c');
                 },
                 trailing: Icon(Icons.add),
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
@@ -83,7 +84,7 @@ class DrawerContents extends StatelessWidget {
                   fontSize: 15.0,
                 )),
                 onTap: (){
-                  Navigator.pushNamed(context, '/todolist');
+                  Get.toNamed('/todolist');
                 },
                 trailing: Icon(Icons.add),
                 contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
